@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                nodejs('node17') {
+                nodejs('node18') {
                     sh 'npm install'
                     sh 'npm run build'
                 }
