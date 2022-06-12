@@ -7,7 +7,7 @@ pipeline {
         stage("Checkout Repo") {
             steps {
                 cleanWs()
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/diogenes0803/jenkins-example']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/diogenes0803/ik-cicd.git']]])
             }
         }
         stage("Build") {
