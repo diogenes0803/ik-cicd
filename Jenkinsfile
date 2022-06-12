@@ -32,13 +32,13 @@ pipeline {
                 }
           }
         }
-        // stage("Deploy") {
-        //     steps {
-        //         sh '''
-        //             ansible-playbook -i ./ansible/deploy/web.ini ./ansible/deploy/deploy_web_server_playbook.yml --extra-vars "container_name='${JOB_NAME}' file_name='${JOB_NAME}${BUILD_NUMBER}.tar.gz'"
-        //         '''
-        //     }
-        // }
+        stage("Deploy") {
+            steps {
+                sh '''
+                    ansible-playbook -i ./ansible/deploy/web.ini ./ansible/deploy/deploy_web_server_playbook.yml --extra-vars "container_name='${JOB_NAME}' file_name='${JOB_NAME}${BUILD_NUMBER}.tar.gz'"
+                '''
+            }
+        }
     }
 }
 
